@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+ <link rel="stylesheet" href="style.css">
+<body>
+
+<body>
+
+<!--Navigation Bar (adapted from: https://www.w3schools.com/howto/howto_css_login_form_navbar.asp)-->
+<div class="topnav">
+  <a class="active" href="#home">Home</a>
+  <a href="#about">About</a>
+  <a href="#contact">Contact</a>
+  <div class="login-container">
+    <form action="/action_page.php">
+      <input type="text" placeholder="Username" name="username">
+      <input type="text" placeholder="Password" name="psw">
+      <button type="submit">Login</button>
+    </form>
+  </div>
+</div>
+
+
+<!--Project list(adapted from: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_column_cards)-->
+
+<!--Search bar(adapted from:https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_search_button) -->
+<h1 style="text-align:center">Select your project</h1>
+
+<!-- Load icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!-- The form -->
+<form class="example" action="/action_page.php" style="margin:auto;max-width:300px">
+  <input type="text" placeholder="Search.." name="search2">
+  <button type="submit"><i class="fa fa-search"></i></button>
+</form>
+<br>
+
+<!--Project list-->
+<div class="row">
+  <div class="listcolumn">
+    <div class="listcard">
+      <h3>Paid Advertising</h3>
+      <p>A project on pay per click (PPC) advertising. Please send me your ideas!</p>
+      <p>Supervisor: Mark Bonnett</p>
+      <p><button class="button">Request interview</button></p>
+      
+    </div>
+  </div>
+
+  <div class="listcolumn">
+    <div class="listcard">
+      <h3>Web analytics</h3>
+      <p>A project based on the topic of web analytics. Please send me your ideas!</p>
+      <p>Supervisor: James Pennington</p>
+      <p><button class="button">Request interview</button></p>
+    </div>
+  </div>
+  
+  <div class="listcolumn">
+    <div class="listcard">
+      <h3>Technical SEO</h3>
+      <p>I am open to other project ideas based on Technical SEO.</p>
+      <p>Supervisor: Michael Mortenson</p>
+      <p><button class="button">Request interview</button></p>
+    </div>
+  </div>
+  
+  <div class="listcolumn">
+    <div class="listcard">
+      <h3>Website Usability</h3>
+      <p>Your project may be based on any Website Usability topics.</p>
+      <p>Supervisor: Liping Zheng</p>
+      <p><button class="button">Request interview</button></p>
+    </div>
+  </div>
+</div>
+
+
+<!--Popup Chat Window -->
+<h1 style="text-align:center">Keep in contact with supervisor</h1>
+
+<!--Chat messages(adapted from:https://www.w3schools.com/howto/howto_css_chat.asp)-->
+<div class="container">
+  <img src="images/supervisor.png" alt="Avatar" style="width:100%;">
+  <p>Hello, is it any problem in your literature review?</p>
+  <span class="time-right">11:00</span>
+</div>
+
+<div class="container darker">
+  <img src="images/student.png" alt="Avatar" class="right" style="width:100%;">
+  <p>Yes! I wonder how can I identify whether the resources are reliable.</p>
+  <span class="time-left">11:01</span>
+</div>
+
+<div class="container">
+  <img src="images/supervisor.png" alt="Avatar" style="width:100%;">
+  <p>Good question, shall we have a face-to-face meeting to clarify this problem? I am free this afternoon in my office.</p>
+  <span class="time-right">11:02</span>
+</div>
+
+<div class="container darker">
+  <img src="images/student.png" alt="Avatar" class="right" style="width:100%;">
+  <p>Sure, I wiil attend the meeting on time.</p>
+  <span class="time-left">11:05</span>
+</div>
+
+<!--Chat button (adapted from:https://www.w3schools.com/howto/howto_js_popup_chat.asp)-->
+<button class="open-button" onclick="openForm()">Chat</button>
+
+<div class="chat-popup" id="myForm">
+  <form action="/action_page.php" class="form-container">
+    <h3>What problems do you meet?</h3>
+
+    <label for="msg"><b>Message</b></label>
+    <textarea placeholder="Type message.." name="msg" required></textarea>
+
+    <button type="submit" class="btn">Send</button>
+    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+  </form>
+</div>
+
+
+<script>
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+</script>
+
+<br>
+<br>
+<!--To Do List (adapted from: https://www.w3schools.com/howto/howto_js_todolist.asp)-->
+<div id="myDIV" class="header">
+  <h1 style="margin:5px">My To Do List</h1>
+  <input type="text" id="myInput" placeholder="Add your assignment" class="input">
+  <span onclick="newElement()" class="addBtn">Add</span>
+</div>
+
+<ul id="myUL">
+  <li class="checked">Research Outline</li>
+  <li>Literature review</li>
+  <li>Meet supervisor</li>
+  <li>Methodology</li>
+  <li>Finish Draft</li>
+  <li>Final Version</li>
+</ul>
+
+<!--To Do List Javascript-->
+<script>
+// Create a "close" button and append it to each list item
+var myNodelist = document.getElementsByTagName("LI");
+var i;
+for (i = 0; i < myNodelist.length; i++) {
+  var span = document.createElement("SPAN");
+  var txt = document.createTextNode("\u00D7");
+  span.className = "close";
+  span.appendChild(txt);
+  myNodelist[i].appendChild(span);
+}
+
+// Click on a close button to hide the current list item
+var close = document.getElementsByClassName("close");
+var i;
+for (i = 0; i < close.length; i++) {
+  close[i].onclick = function() {
+    var div = this.parentElement;
+    div.style.display = "none";
+  }
+}
+
+// Add a "checked" symbol when clicking on a list item
+var list = document.querySelector('ul');
+list.addEventListener('click', function(ev) {
+  if (ev.target.tagName === 'LI') {
+    ev.target.classList.toggle('checked');
+  }
+}, false);
+
+// Create a new list item when clicking on the "Add" button
+function newElement() {
+  var li = document.createElement("li");
+  var inputValue = document.getElementById("myInput").value;
+  var t = document.createTextNode(inputValue);
+  li.appendChild(t);
+  if (inputValue === '') {
+    alert("You must write something!");
+  } else {
+    document.getElementById("myUL").appendChild(li);
+  }
+  document.getElementById("myInput").value = "";
+
+  var span = document.createElement("SPAN");
+  var txt = document.createTextNode("\u00D7");
+  span.className = "close";
+  span.appendChild(txt);
+  li.appendChild(span);
+
+  for (i = 0; i < close.length; i++) {
+    close[i].onclick = function() {
+      var div = this.parentElement;
+      div.style.display = "none";
+    }
+  }
+}
+</script>
+
+
+
+<!--Offeic Hour (adapted from: https://www.w3schools.com/howto/howto_css_team.asp)-->
+<h1 style="text-align:center">Office Hour</h1>
+<div class="row">
+  <div class="column">
+    <div class="card">
+      <img src="images/team1.jpg" alt="Jane" style="width:100%">
+      <div class="container2">
+        <h2>Jane Doe</h2>
+        <p class="title">Every Monday 2pm-5pm</p>
+        <p>Responsible for helping improve academic writing & search information</p>
+        <p>Jane.Doe@office.ac.uk</p>
+        <p><button class="button">Contact</button></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <img src="images/team2.jpg" alt="Mike" style="width:100%">
+      <div class="container2">
+        <h2>Mike Ross</h2>
+        <p class="title">Every Tuesday 2pm-5pm</p>
+        <p>Responsible for solving coding & software and other technical problems</p>
+        <p>Mike.Ross@office.ac.uk</p>
+        <p><button class="button">Contact</button></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <img src="images/team3.jpg" alt="John" style="width:100%">
+      <div class="container2">
+        <h2>John Smith</h2>
+        <p class="title">Every Thursday 2pm-5pm</p>
+        <p>Responsible for optimizing methodology design & data analysis</p>
+        <p>John.Smith@office.ac.uk</p>
+        <p><button class="button">Contact</button></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Useful resources (adapted from: https://www.w3schools.com/howto/howto_css_images_side_by_side.asp) -->
+<h1 style="text-align:center">Useful Resources</h1>
+<p style="text-align:center">You can find business reports, journal articles, book chapters in the following database</p>
+
+<div class="row">
+  <div class="column">
+  	<a href="https://scholar.google.com/">    
+  		<img src="images/scholar1.jpg" alt="Web of Science" style="width:70%">
+  	</a>
+
+
+  </div>
+  <div class="column">
+  	<a href="https://www.webofscience.com/wos/woscc/basic-search">
+        <img src="images/wos1.jpg" alt="Statista" style="width:70%">
+    </a>
+  </div>
+  <div class="column">
+  	<a href="https://www.statista.com/">
+        <img src="images/statista1.jpg" alt="Google Scholar" style="width:70%">
+    </a>
+  </div>
+</div>
+
+
+
+<!-- Footer section (adapted from: Jordan code) -->
+	<footer>
+		<p>Please find more information on <a href="https://projectselection.wmg.warwick.ac.uk/" target="_blank">Dissertation System</a></p>
+	</footer>
+
+</body>
+</html>
